@@ -16,6 +16,7 @@
 #include <linux/of_device.h>
 #include <linux/of_graph.h>
 #include <linux/pm.h>
+#include <linux/version.h> 
 
 #include <drm/drm_crtc.h>
 #include <drm/drm_device.h>
@@ -788,7 +789,11 @@ static struct i2c_driver ws_panel_driver = {
 		.name = "ws_touchscreen",
 		.of_match_table = ws_panel_of_ids,
 	},
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(6, 3, 0)
 	.probe = ws_panel_probe,
+#else
+	.probe_new = ws_panel_probe,
+#endif
 	.remove = ws_panel_remove,
 	.shutdown = ws_panel_shutdown,
 };
