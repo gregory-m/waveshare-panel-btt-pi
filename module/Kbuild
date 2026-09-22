@@ -1,0 +1,1 @@
+obj-m += panel-waveshare-dsi.o

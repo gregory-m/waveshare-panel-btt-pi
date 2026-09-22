@@ -1,8 +1,12 @@
 # Waveshare panel driver for BTT Pi
 
-## How to build module:
+## How to build and install module module:
 ```
+curl -L -o /tmp/linux-headers-btt-rockchip64_3.1.0-26.08.0-trunk_arm64__6.1.115.deb https://github.com/gregory-m/waveshare-panel-btt-pi/releases/download/v0.0.1/linux-headers-btt-rockchip64_3.1.0-26.08.0-trunk_arm64__6.1.115-S4b20-Dcb6e-P09c0-C908f-H94f2-HK01ba-Vc222-Bfe95-R448a.deb
+sudo apt install /tmp/linux-headers-btt-rockchip64_3.1.0-26.08.0-trunk_arm64__6.1.115.deb
+
 make
+sudo make install
 ```
 
 ## How to create kernel headers:
