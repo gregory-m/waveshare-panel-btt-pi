@@ -58,7 +58,8 @@ static const struct drm_display_mode ws_panel_2_8_mode = {
 static const struct ws_panel_data ws_panel_2_8_data = {
 	.mode = &ws_panel_2_8_mode,
 	.lanes = 2,
-	.mode_flags = MIPI_DSI_MODE_VIDEO_HSE | MIPI_DSI_MODE_VIDEO | MIPI_DSI_CLOCK_NON_CONTINUOUS,
+	.mode_flags = MIPI_DSI_MODE_VIDEO_HSE | MIPI_DSI_MODE_VIDEO | MIPI_DSI_CLOCK_NON_CONTINUOUS | 
+		MIPI_DSI_MODE_VIDEO_BURST,
 };
 
 /* 3.4inch 800x800 Round
