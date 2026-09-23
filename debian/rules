@@ -1,0 +1,22 @@
+#!/usr/bin/make -f
+
+export KVER ?= $(shell uname -r)
+PKGDIR := debian/panel-waveshare-dsi
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	$(MAKE) module
+
+override_dh_auto_install:
+	install -D -m 644 module/panel-waveshare-dsi.ko $(PKGDIR)/lib/modules/$(KVER)/updates/panel-waveshare-dsi.ko
+	install -D -m 644 overlay/panel-waveshare-dsi.dts $(PKGDIR)/usr/share/panel-waveshare-dsi/panel-waveshare-dsi.dts
+
+override_dh_auto_clean:
+	rm -f module/*.o module/*.ko module/*.mod module/*.mod.c module/.*.cmd module/Module.symvers module/modules.order
+
+override_dh_installmodules:
+
+override_dh_gencontrol:
+	dh_gencontrol -- -Vkernel:Version=$(KVER)

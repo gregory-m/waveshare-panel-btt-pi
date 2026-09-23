@@ -1,0 +1,14 @@
+Source: panel-waveshare-dsi
+Section: kernel
+Priority: optional
+Maintainer: Gregory Man <man.gregory@gmail.com>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.2
+Rules-Requires-Root: no
+
+Package: panel-waveshare-dsi
+Architecture: any
+Depends: kmod, device-tree-compiler, ${misc:Depends}
+Description: Waveshare DSI panel driver and overlay for BTT Pi
+ Out-of-tree panel-waveshare-dsi kernel module built for kernel
+ ${kernel:Version}

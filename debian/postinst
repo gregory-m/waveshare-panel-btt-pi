@@ -1,0 +1,9 @@
+#!/bin/sh
+set -e
+
+if [ "$1" = "configure" ]; then
+	depmod -a #ENV.KVER#
+	armbian-add-overlay /usr/share/#PACKAGE#/#PACKAGE#.dts
+fi
+
+#DEBHELPER#

@@ -12,6 +12,13 @@ make
 sudo make install
 ```
 
+## How to build deb package:
+```
+dpkg-buildpackage -us -uc -b
+sudo apt install ../panel-waveshare-dsi_0.1.0_arm64.deb
+```
+Package version comes from `debian/changelog` update it before relasing new version.
+
 ## How to create kernel headers:
 Bigtreetech [doesn't includes kernel headers](https://github.com/bigtreetech/CB1/issues/209) in their armbian distribution, this makes creating off the tree kernel module very hard task. Also their compile script produces kernel headers package its just not installed on target OS.
 

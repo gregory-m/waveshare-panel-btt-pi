@@ -1,0 +1,14 @@
+#!/bin/sh
+set -e
+
+case "$1" in
+remove|purge)
+	depmod -a #ENV.KVER# || true
+	rm -f /boot/overlay-user/#PACKAGE#.dtbo
+	if [ -f /boot/armbianEnv.txt ]; then
+		sed -i -E '/^user_overlays=/{s/([= ])#PACKAGE#( |$)/\1/;s/ +$//;/^user_overlays=$/d}' /boot/armbianEnv.txt
+	fi
+	;;
+esac
+
+#DEBHELPER#

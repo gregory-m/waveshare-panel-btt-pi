@@ -4,3 +4,9 @@ module/*.o
 module/*.ko
 module/*.cmd
 module/*.mod*
+debian/panel-waveshare-dsi/
+debian/.debhelper/
+debian/debhelper-build-stamp
+debian/files
+debian/*.substvars
+debian/*.debhelper.log
